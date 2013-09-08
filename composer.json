@@ -1,11 +1,14 @@
 {
-    "require": {
-        "silex/silex": "~1.0",
-        "aws/aws-sdk-php": "*",
-        "aws/aws-sdk-php-silex": "1.*"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "3.7.*"
-    },
-    "minimum-stability": "dev"
+  "require": {
+    "silex/silex": "~1.0",
+    "aws/aws-sdk-php": "*",
+    "aws/aws-sdk-php-silex": "1.*",
+  },
+  "require-dev": {
+    "phpunit/phpunit": "3.7.*"
+  },
+  "autoload": {
+    "psr-0": { "Inheritor": "src/" }
+  },
+  "minimum-stability": "dev"
 }
