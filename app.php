@@ -9,9 +9,6 @@ $app->get('/', function(Silex\Application $app) {
     'year' => date('Y')
   ));
 });
-$app->get('/search', function(Silex\Application $app, Request $request) {
-
-});
 
 /*
  * APIs
