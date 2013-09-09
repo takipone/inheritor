@@ -26,6 +26,7 @@ class AmiTest extends PHPUnit_Framework_TestCase
   {
     $ami = new Ami();
     $ami->setAmiId('ami-12345678');
+    $ami->setRegion(Region::TOKYO);
     $ami->setParents(array('ami-11111111', 'ami-22222222'));
     $ami->setChildren(array('ami-33333333', 'ami-44444444'));
     $ami->setBrothers(array('ami-55555555', 'ami-66666666'));
