@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Tokyo');
 use Symfony\Component\HttpFoundation\Request;
 
 $app->get('/', function(Silex\Application $app) {
-  return $app['twig']->render('index.twig', array(
+  return $app['twig']->render('home.twig', array(
     'year' => date('Y')
   ));
 });

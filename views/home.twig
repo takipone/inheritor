@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inheritor - relate Amazon Machine Image(AMI)'s parentage.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <a href="https://github.com/takipone/inheritor" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <div class="search_panel">
+    <h1>Inheritor</h1>
+    <p>Let's relate Amazon Machine Image(AMI)'s parentage.</p>
+    <div class="input-group">
+      <input type="text" id="search_input" class="search_input input-lg form-control" placeholder="ami-XXXXXXXX" autofocus>
+      <span class="input-group-btn">
+        <button id="search_btn" class="search_btn btn btn-lg btn-primary" type="button">Show</button>
+      </span>
+    </div>
+  </div>  
+  <div class="container">
+    <div id="ami_tree_panel"></div>
+  </div>
+  <nav class="footer navbar navbar-inverse navbar-fixed-bottom">
+    <p class="credit">&copy; {{ year }} takipone all rights reserved.</p>
+  </nav>
+  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script>
+$(document).ready(function() {
+  $('#search_btn').click(function() {
+    var ami_id = $('#search_input').val();
+    $.getJSON('/api/v1/' + ami_id, function(data) {
+      alert(data['ami-id']);
+    });
+    return false;
+  });
+});
+  </script>
+</body>
+</html>
