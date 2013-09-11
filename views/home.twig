@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-  <a href="https://github.com/takipone/inheritor" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <a href="https://github.com/takipone/inheritor" target="_blank"><img class="github-ribbon" style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
   <div class="search_panel">
     <h1>Inheritor</h1>
     <p>Let's relate Amazon Machine Image(AMI)'s parentage.</p>
@@ -18,24 +18,28 @@
       </span>
     </div>
   </div>  
-  <div class="container">
-    <div id="ami_tree_panel"></div>
+  <div id="ami_panel_base">
+    <div class="ami_parentage_panel panel panel-default">
+      <h4 class="ami_id"></h4>
+    </div>
+    <div class="ami_panel panel panel-default">
+      <p class="ami_label_above"><span class="glyphicon glyphicon-chevron-up"></span>&nbsp;&nbsp;&nbsp;ancestor</p>
+      <div class="panel-body">
+        <button type="button" class="btn btn-success btn-lg pull-right">
+          Launch&nbsp;<span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </button> 
+        <h4 class="ami_id"></h4>
+        <p class="region"></p>
+      </div>
+      <p class="ami_label_below"><span class="glyphicon glyphicon-chevron-down"></span>&nbsp;&nbsp;&nbsp;descents</p>
+    </div>
   </div>
   <nav class="footer navbar navbar-inverse navbar-fixed-bottom">
     <p class="credit">&copy; {{ year }} takipone all rights reserved.</p>
   </nav>
-  <script src="//code.jquery.com/jquery.js"></script>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script>
-$(document).ready(function() {
-  $('#search_btn').click(function() {
-    var ami_id = $('#search_input').val();
-    $.getJSON('/api/v1/' + ami_id, function(data) {
-      alert(data['ami-id']);
-    });
-    return false;
-  });
-});
-  </script>
+  <script src="/site.js"></script>
 </body>
 </html>

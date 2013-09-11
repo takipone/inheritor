@@ -3,13 +3,18 @@ body {
   background-color: #eee;
 }
 
+.github-ribbon {
+  z-index: 1;
+}
+
 .search_panel {
   position: absolute;
   padding: 0px 18px 5px;
   background-color: #FFF;
   border-bottom-right-radius: 8px;
-  box-shadow: 3px 3px 3px #999;
-  -webkit-box-shadow: 3px 3px 3px #999;
+  box-shadow: 3px 3px 12px #666;
+  -webkit-box-shadow: 3px 3px 12px #666;
+  z-index: 1;
 }
 .search_panel > h1, .search_panel > p  {
   display: inline;
@@ -36,6 +41,46 @@ body {
 }
 .search_input, .search_btn {
   margin-bottom: 10px;
+}
+
+#ami_panel_base {
+  width: 340px;
+  background-color: #DDD;
+  padding: 10px;
+}
+
+.ami_panel {
+  width: 320px;
+  height: 100px;
+  padding-left: 4px;
+}
+
+.ami_panel button {
+  margin-top: 11px;
+}
+.ami_label_above {
+  position: absolute;
+  top: -24px;
+  width: 320px;
+  padding: 0px 10px;
+  color: #99A;
+}
+.ami_label_below {
+  position: absolute;
+  bottom: -38px;
+  width: 320px;
+  padding: 0px 10px;
+  color: #99A;
+}
+
+.ami_parentage_panel {
+  width: 320px;
+  height: 40px;
+  padding-left: 18px;
+  z-index: 0;
+}
+.ami_parentage_panel h4 {
+  color: #999;
 }
 
 .navbar {
