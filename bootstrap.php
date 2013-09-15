@@ -1,7 +1,6 @@
 <?php
 
-$loader = require __DIR__ . '/vendor/autoload.php';
-$loader->add('Inheritor', __DIR__ . '/../src/Inheritor');
+require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/setting.php';
 
 use Aws\Common\Aws;

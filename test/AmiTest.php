@@ -1,6 +1,6 @@
 <?php
-$loader = require __DIR__ . '/../vendor/autoload.php';
-$loader->add('Inheritor', __DIR__ . '/../src/Inheritor');
+
+require __DIR__ . '/../vendor/autoload.php';
 
 use Aws\Common\Enum\Region;
 use Aws\DynamoDb\Exception\DynamoDbException;
@@ -16,6 +16,7 @@ class AmiTest extends PHPUnit_Framework_TestCase
     $config = array(
       'key'    => getenv('AWS_ACCESS_KEY_ID'),
       'secret' => getenv('AWS_SECRET_ACCESS_KEY'),
+      'base_url' => 'http://localhost:8000',
       'region' => Region::TOKYO,
       'table_prefix' => 'inheritor_'
     );
